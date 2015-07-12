@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.3.5'
+lock '3.2.1'
 
 server '45.55.146.62', roles: [:app, :web, :db], primary: true
 user = 'event'

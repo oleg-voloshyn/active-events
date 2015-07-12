@@ -11,4 +11,4 @@ h1= 'Events'
         - @events_by_date[date].each do |event|
           li= link_to event.name, event
 
-p= link_to 'New Event', new_event_path
+p= link_to 'New Event', new_event_path, 'data-no-turbolink' => true

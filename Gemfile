@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'slim-rails'
 gem 'simple_form'
 gem 'mysql2'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'pry'

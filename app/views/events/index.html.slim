@@ -1,4 +1,6 @@
 h1= 'Events'
+p= link_to 'New Event', new_event_path, 'data-no-turbolink' => true
+
 #events
   h2#month
     = link_to "<", date: @date.prev_month
@@ -10,5 +12,3 @@ h1= 'Events'
       ul
         - @events_by_date[date].each do |event|
           li= link_to event.name, event
-
-p= link_to 'New Event', new_event_path, 'data-no-turbolink' => true

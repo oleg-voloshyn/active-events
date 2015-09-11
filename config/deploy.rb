@@ -1,7 +1,7 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-server '45.55.146.62', roles: [:app, :web, :db], primary: true
+server '162.243.184.18', roles: [:app, :web, :db], primary: true
 user = 'event'
 application = 'event'
 
@@ -11,7 +11,7 @@ set :repo_url, 'git@github.com:oleg-voloshyn/active-events.git'
 set :scm, :git
 set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 set :rvm_type, :user
-set :rvm_ruby_version, '2.2.0'
+set :rvm_ruby_version, '2.2.2'
 set :default_shell, '/bin/bash -l'
 set :keep_releases, 5
 set :branch, 'master'

@@ -15,7 +15,7 @@ role :db,  %w{event@162.243.184.18}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '45.55.146.62', user: 'event', roles: %w{web app}, my_property: :my_value
+server '162.243.184.18', user: 'event', roles: %w{web app}, my_property: :my_value
 
 
 # Custom SSH Options

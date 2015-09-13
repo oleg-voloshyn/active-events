@@ -1,5 +1,4 @@
 h1= 'Events'
-p= link_to 'New Event', new_event_path, 'data-no-turbolink' => true
 
 #events
   h2#month
@@ -7,7 +6,7 @@ p= link_to 'New Event', new_event_path, 'data-no-turbolink' => true
     = @date.strftime("%B %Y")
     = link_to ">", date: @date.next_month
   = calendar @date do |date|
-    = date.day
+    = link_to date.day, new_event_path, remote: true
     - if @events_by_date[date]
       ul
         - @events_by_date[date].each do |event|

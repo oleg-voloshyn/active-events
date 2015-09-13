@@ -1,6 +1,7 @@
 /*
  *
  *= require jquery-ui
+ *= require lazybox
  *= require_tree .
  *= require_self
  */

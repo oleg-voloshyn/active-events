@@ -13,6 +13,7 @@ gem 'slim-rails'
 gem 'simple_form'
 gem 'mysql2'
 gem 'omniauth-google-oauth2'
+gem 'lazybox'
 
 group :development, :test do
   gem 'pry'

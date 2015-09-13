@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
-  def show
-  end
+  skip_before_action :require_user
+
+  def show; end
 end

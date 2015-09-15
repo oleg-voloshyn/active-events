@@ -1,12 +1,9 @@
 = simple_form_for @event, remote: true do |f|
   .field
-    = f.label :name
-    = f.text_field :name
+    = f.input :name
   .field
-    = f.label :published_on
-    = f.text_field :published_on
+    = f.input :published_on
   .field
-    = f.label :description
-    = f.text_area :description
+    = f.input :description
   .actions
     = f.submit

@@ -6,7 +6,7 @@ h1= 'Events'
     = @date.strftime("%B %Y")
     = link_to ">", date: @date.next_month
   = calendar @date do |date|
-    = link_to date.day, new_event_path, remote: true
+    = date_link(date)
     - if @events_by_date[date]
       ul
         - @events_by_date[date].each do |event|

@@ -14,6 +14,8 @@ gem 'simple_form'
 gem 'mysql2'
 gem 'omniauth-google-oauth2'
 gem 'lazybox'
+gem 'geocoder'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'pry'

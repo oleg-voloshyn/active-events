@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to @event, notice: "Created event."
+      redirect_to @event, notice: 'Created event.'
     else
       render :new
     end

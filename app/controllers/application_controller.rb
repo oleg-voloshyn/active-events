@@ -11,12 +11,4 @@ class ApplicationController < ActionController::Base
   def require_user
     redirect_to root_path unless current_user
   end
-
-  def date_link(date)
-    if Date.current > date
-      "#{date.day}"
-    else
-      "<a data-remote='true' href='#{new_event_path}'>#{date.day}</a>".html_safe
-    end
-  end
 end

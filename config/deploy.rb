@@ -9,7 +9,7 @@ set :user, user
 set :application, application
 set :repo_url, 'git@github.com:oleg-voloshyn/active-events.git'
 set :scm, :git
-set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+set :default_env, rvm_bin_path: '~/.rvm/bin'
 set :rvm_type, :user
 set :rvm_ruby_version, '2.2.2'
 set :default_shell, '/bin/bash -l'
@@ -37,7 +37,7 @@ set :deploy_to, "/home/#{user}/olegv/event"
 
 # Default value for :linked_files is []
 # set :linked_files, %w{config/database.yml}
-set :linked_files, %w{ config/database.yml config/secrets.yml }
+set :linked_files, %w(config/database.yml config/secrets.yml)
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
@@ -49,7 +49,7 @@ set :linked_files, %w{ config/database.yml config/secrets.yml }
 # set :keep_releases, 5
 
 namespace :db do
-  desc "Create database and database user"
+  desc 'Create database and database user'
   task :create_mysql_database do
     ask :db_root_password, ''
     ask :db_name, 'active_events_production'
@@ -64,11 +64,10 @@ namespace :db do
 end
 
 namespace :deploy do
-
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute :mkdir, '-p', "#{ release_path }/tmp"
+      execute :mkdir, '-p', "#{release_path}/tmp"
       execute :touch, release_path.join('tmp/restart.txt')
     end
   end
@@ -76,22 +75,22 @@ namespace :deploy do
   after :publishing, :restart
 
   # after :restart, :clear_cache do
-    # on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    # end
+  # on roles(:web), in: :groups, limit: 3, wait: 10 do
+  # Here we can do anything such as:
+  # within release_path do
+  #   execute :rake, 'cache:clear'
+  # end
+  # end
   # end
 
-  desc "Make sure local git is in sync with remote."
+  desc 'Make sure local git is in sync with remote.'
   task :check_revision do
     on roles(:web) do
       unless `git rev-parse HEAD` == `git rev-parse origin/master`
-        puts "WARNING: HEAD is not the same as origin/master"
-        puts "Run `git push` to sync changes."
+        puts 'WARNING: HEAD is not the same as origin/master'
+        puts 'Run `git push` to sync changes.'
       end
     end
   end
-  before "deploy", "deploy:check_revision"
+  before 'deploy', 'deploy:check_revision'
 end

@@ -16,6 +16,7 @@ gem 'mysql2'
 gem 'omniauth-google-oauth2'
 gem 'lazybox'
 gem 'geocoder'
+gem 'thelpers'
 
 group :development, :test do
   gem 'pry'

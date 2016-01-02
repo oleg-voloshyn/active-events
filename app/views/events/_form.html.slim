@@ -1,8 +1,6 @@
-= simple_form_for @event, remote: true do |f|
+= simple_form_for event, remote: true do |f|
   .field
     = f.input :name
-  .field
-    = f.input :published_on
   .field
     = f.input :description
   .actions

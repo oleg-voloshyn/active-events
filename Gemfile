@@ -17,6 +17,7 @@ gem 'omniauth-google-oauth2'
 gem 'lazybox'
 gem 'geocoder'
 gem 'thelpers'
+gem 'foundation-rails'
 
 group :development, :test do
   gem 'pry'

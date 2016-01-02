@@ -25,6 +25,7 @@ group :development, :test do
   gem 'spring'
   gem 'capistrano', '~> 3.2.1'
   gem 'capistrano-rails'
+  gem 'capistrano-passenger'
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
   gem 'passenger'

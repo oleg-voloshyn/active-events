@@ -17,6 +17,7 @@ set :keep_releases, 5
 set :branch, 'master'
 set :pty, true
 set :use_sudo, false
+set :passenger_restart_with_touch, true
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call

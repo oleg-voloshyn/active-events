@@ -1,5 +1,11 @@
-h2= 'Name'
-p= @event.name
-br
-h2= 'Description'
-p= @event.description
+p#notice= notice
+
+p
+  strong Name:
+  = @event.name
+p
+  strong Start time:
+  = @event.start_time
+
+= link_to 'Edit', edit_event_path(@event)
+= link_to 'Back', events_path

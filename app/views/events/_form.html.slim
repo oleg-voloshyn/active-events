@@ -1,7 +1,16 @@
-= simple_form_for event, remote: true do |f|
+= simple_form_for(@event) do |f|
+  - if @event.errors.any?
+    #error_explanation
+      h2= pluralize(@event.errors.count, "error")
+
+      ul
+        - @event.errors.full_messages.each do |message|
+          li= message
   .field
-    = f.input :name
+    = f.label :name
+    = f.text_field :name
   .field
-    = f.input :description
+    = f.label :start_time
+    = f.input :start_time, as: :date, html5: true
   .actions
     = f.submit

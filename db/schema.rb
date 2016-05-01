@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151223135742) do
+ActiveRecord::Schema.define(version: 20160501191810) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name",         limit: 255
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20151223135742) do
     t.float    "latitude",     limit: 24
     t.float    "longitude",    limit: 24
     t.integer  "user_id",      limit: 4
+    t.datetime "start_time"
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree

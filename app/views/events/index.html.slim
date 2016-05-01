@@ -1,2 +1,22 @@
-h1= 'Events'
-= link_to :add_event, new_event_path
+h1 Listing events
+
+#events_calendar
+  = render partial: 'calendar', locals: { events: @events }
+
+table
+  thead
+    tr
+      th Name
+      th Start time
+      th colspan="3"
+  tbody
+    - @events.each do |event|
+      tr
+        td= event.name
+        td= event.start_time
+        td= link_to 'Show', event
+        td= link_to 'Edit', edit_event_path(event)
+        td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+br
+
+= link_to 'New Event', new_event_path

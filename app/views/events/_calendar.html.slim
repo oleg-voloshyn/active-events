@@ -1,4 +1,4 @@
 = month_calendar events: events do |date, events|
-  = date
+  = link_to date.strftime("#{ActiveSupport::Inflector.ordinalize(date.day)} %B"), new_event_path(date: date)
   - events.each do |event|
-    = event.name
+    br= link_to event.name, event_path(event), class: 'event-link'
